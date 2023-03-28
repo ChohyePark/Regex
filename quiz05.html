@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.all.min.js"></script>
+</head>
+
+
+
+<body>
+
+  <form action="page.html" id="Login">
+    <input type="text" placeholder="ID를 입력해주세요" id="id"><br>
+    <input type="text" placeholder="핸드폰 번호를 입력해주세요" id="phone"><br>
+    <button>제출</button>
+
+  </form>
+
+  <script>
+    document.getElementById("Login").onsubmit = function () {
+
+      let id = document.getElementById("id").value;
+      let phone = document.getElementById("phone").value;
+      let regexid = /^[A-Z][a-z]/;
+      let regexphone = /^01\d\d{4}\d{4}$/;
+
+      let idresult = regexid.test(id);
+      let phoneresult = regexphone.test(phone);
+
+
+      if (!idresult) {
+
+        Swal.fire({
+          title: 'ID를 다시 입력해주세요',
+          width: 600,
+          padding: '3em',
+          color: '#716add',
+          background: '#fff url(/images/trees.png)',
+          backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://sweetalert2.github.io/images/nyan-cat.gif")
+          left top
+          no-repeat 
+          `
+        })
+        return false;
+      } else {
+        if (!phoneresult) {
+          Swal.fire({
+          title: '핸드폰 번호를 다시 확인해주세요',
+          width: 600,
+          padding: '3em',
+          color: '#716add',
+          background: '#fff url(/images/trees.png)',
+          backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://sweetalert2.github.io//images/nyan-cat.gif")
+          left top
+          no-repeat
+  `
+        })
+          return false;
+        }
+
+      }
+
+
+
+
+    }
+  </script>
+
+</body>
+
+</html>
