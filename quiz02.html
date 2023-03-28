@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="text" id="inputID" placeholder="ID">
+  <button id="check"> 검사 </button>
+  <fieldset>
+    <legend>검사 결과</legend>
+    <div id="msg"></div>
+  </fieldset>
+
+
+
+
+  <script>
+
+
+    document.getElementById("check").onclick = function () {
+
+      const id = document.getElementById("inputID").value;
+      const result = /^[A-Z][a-z0-9_]{6,12}$/.test(id);
+
+      if (result) {
+        document.getElementById("msg").innerText = "사용 가능한 ID 입니다.";
+      } else {
+        document.getElementById("msg").innerText = "사용 불가능한 ID 입니다.";
+      }
+      
+
+    }
+
+  </script>
+
+</body>
+
+</html>
