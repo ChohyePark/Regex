@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <input type="text" id="phone" placeholder="핸드폰 번호를 입력하세요.">
+  <button id="check"> 검사 </button>
+  <fieldset>
+    <legend>검사 결과</legend>
+    <div id="msg"></div>
+  </fieldset>
+
+  <script>
+
+
+    const regex = /^010\d{8}$/gm;
+    
+    document.getElementById("check").onclick = function () {
+      console.log("확인");
+
+      const phone = document.getElementById("phone").value;
+      const result = regex.test(phone);
+
+
+      if (result) {
+        document.getElementById("msg").innerText = "핸드폰 번호가 맞습니다."
+      } else {
+        document.getElementById("msg").innerText = "핸드폰 번호가 아닙니다."
+      }
+
+    };
+
+  </script>
+
+</body>
+
+</html>
