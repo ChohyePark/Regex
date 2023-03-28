@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script> 
+  const regex = new RegExp('abc');
+</script>
+  <!-- Regex : Regular Expression : 정규표현식 -->
+  <!-- 정밀 검색 표현식, 텍스트 패턴 매칭 표현 기법 -->
+  <!-- // 내부에 검색 패턴을 적용 -->
+  <!-- // 바깥에 falg option 설정-->
+  <!-- Flags 
+
+    g: Global 전체에서 모조리 찾아라 
+    i : case Insentivit -> 대소문자 가리지 말고 찾아라 ! 
+    s : dotall - . 메타문자가 \n 을 포함한 모든 문자를 찾아낼 수 있게 지원 
+    m : multiline - \n 를 기준으로 각각의 문장을 개별적으로 나누는 flag -->
+    
+    <!-- Meta문자 (문자 그대로의 의미가 아닌 특정 기능을 수행하는 특수 문자들 )
+      # 모든 메타 문자는  \ 기호를 붙여 기능을 제거할 수 있음.
+
+      1 : . : 모든문자 아무거나 한글자와 매칭 
+              > . 은 모든 문자와 매칭 되지만 개행 \n 문자는 매칭되지 못함
+              (s flag 를 이용해 극복 가능
+              ) 
+      2 : ^ : 문장의 가장 앞에서 매칭
+              > java 의 startWith 와 유사 (모든 문장중  가장 앞쪽의 단어만 보여지게함)
+              > 개행 기준 문장으로 나누어지는 것이 아닌 전체 문자열의 가장 앞에서만 검색
+              > 개행 기준 문장에서 가장 앞을 검색할 때는 m 옵션과 함께 사용해야 함.
+              > [] 기호 안에서 사용되면 not 의 의미를 가짐.
+
+      3 : $ : 문장의 가장 뒤에서 매칭
+              > java 의 endsWith 와 유사함
+                이하 2번과 같은 규칙 
+
+      응용 3.5 : ^단어$ : 오로지 단어로만 구성된 문장을 검색.
+
+      4 : ? : 바로 앞의 한 문자에 대해 있어도 없어도 매칭하겠다.
+              > 사용되는 문맥에 따라 다른 의미로 이용 가능.
+              > 수량자 뒤에서 시용 될 시, 최단매치 (Lazy match) 동작을 유도함. 
+
+      5 : [] : 대괄호 안의 문자들 중에서 매칭   
+      a[^bcf]c  b,c,f가 아닌 것들   
+      
+      6 : 수량자 - 수량자는 검색 시 기본적으로 최장 매치 (Greedy match) 를 수행함 
+              > + : 바로 앞의 항 문자에 대하여 1회 이상 무한대까지 매칭하겠다.
+              > * : 바로 앞의 한 문자에 대하여 0회 이상 무한대까지 매칭하겠다.
+      
+      7 : () - 문자에 대하여 그룹화를 적용함
+        A(ppl)+e  (ppl) -> 한 단어가 아닌 그룹화 
+
+
+    -->
+  </body>
+</html>
