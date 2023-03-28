@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 페이지 이동 관련 기법 -->
+  <!-- 1. Hyperlink : anker 태그 -->
+  <a href="exam03.html">Exam03 로 이동</a><br>
+  <hr>
+
+  <!-- 2. Javascript 를 활용하여 주소창 조작 -->
+  <button id="toExam03">버튼으로 Exam03 로 이동 </button>
+
+
+
+  <script>
+    document.getElementById("toExam03").onclick = function () {
+      location.href = "exam03.html"; // 브라우저 모델 Bom에 해당한다. 
+    }
+
+  </script>
+  <hr>
+  <!-- 3. Form 태그를 활용한 submit 데이터를 이동하는 페이지에 보낸다. -->
+  <!-- button, input type submit 모두 폼 안에서만 sumbmit 으로서의 기능을 한다.  -->
+  <form action="exam03.html">
+    <input type="text" placeholder="exam03로 보낼 메세지">
+    <button>제출</button>
+  </form>
+
+</body>
+
+</html>
